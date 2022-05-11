@@ -3,12 +3,13 @@
    become: yes
    hosts: all
    vars:
+     - node_source: https://deb.nodesource.com/setup_14.x
      - root_user: root
-   
+  
    tasks:
      - name: installing nodesource
-       command:
-         cmd: curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+       ansible.builtin.uri:
+         url: "{{ node_source }}"
        become: yes
        become_user: "{{ root_user }}"
      - name: installing nodejs
@@ -16,11 +17,10 @@
          name: nodejs
      - name: installing build-essential
        apt:
-         name: build-essential
+         name: 
+           - build-essential
+           - npm
      - name: installing npm
-       apt:
-         name: npm
-         state: present
      - name: installing nodejs libraries
        community.general.npm:
          name: "{{ item }}"
