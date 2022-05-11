@@ -51,3 +51,11 @@
          name: apache2
          daemon_reload: yes
          state: restarted
+     - name: installing  imagemagick
+       apt: 
+         update_cache: yes
+         name: imagemagick
+         state: present
+     - name: installing angular cli
+       community.general.npm:
+         name: @angular/cli
