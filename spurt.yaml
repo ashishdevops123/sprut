@@ -36,10 +36,7 @@
          update_cache: yes
      - name: Enable the Apache2 modules
        apache2_module:
-         name: 
-           - proxy
-           - proxy_http
-           - headers
+         name: proxy
          state: present
          
      - name: restarting apache2
