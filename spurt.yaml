@@ -59,3 +59,4 @@
      - name: installing angular cli
        community.general.npm:
          name: angular/cli
+         global: yes
