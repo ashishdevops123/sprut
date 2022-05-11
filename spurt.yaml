@@ -38,7 +38,8 @@
          update_cache: yes
      - name: Enable the Apache2 modules
        apache2_module:
-         name: "{{ apache2_modules }}"
+         name: apache2 modules
+         identifier: "{{ apache2_modules }}"
      - name: restarting apache2
        ansible.builtin.systemd:
          name: apache2
