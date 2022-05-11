@@ -38,7 +38,14 @@
        apache2_module:
          name: proxy
          state: present
-         
+     - name: Enable the Apache2 modules
+       apache2_module:
+         name: proxy_http
+         state: present
+     - name: Enable the Apache2 modules
+       apache2_module:
+         name: headers
+         state: present
      - name: restarting apache2
        ansible.builtin.systemd:
          name: apache2
