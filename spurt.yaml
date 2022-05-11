@@ -4,8 +4,6 @@
    hosts: all
    vars:
      - node_source: https://deb.nodesource.com/setup_14.x
-      
-
    tasks:
      - name: installing nodesource
        ansible.builtin.uri:
