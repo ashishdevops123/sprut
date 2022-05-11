@@ -58,4 +58,4 @@
          state: present
      - name: installing angular cli
        community.general.npm:
-         name: @angular/cli
+         name: angular/cli
