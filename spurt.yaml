@@ -17,6 +17,7 @@
      - name: installing nodejs libraries
        community.general.npm:
          name: "{{ item }}"
+         global: yes
        loop: 
          - forever  
          - apidoc  
