@@ -4,9 +4,7 @@
    hosts: all
    vars:
      - node_source: https://deb.nodesource.com/setup_14.x
-     - node_libraries:
-         - forever
-         - apidoc 
+      
 
    tasks:
      - name: installing nodesource
@@ -21,6 +19,8 @@
      - name: installing nodejs libraries
        community.general.npm:
          name: "{{ item }}"
-       loop: "{{ node_libraries }}"     
+       loop: 
+         - forever  
+         - apidoc  
      
 
