@@ -1,0 +1,26 @@
+---
+-  name: installing spurt commerce
+   become: yes
+   hosts: all
+   vars:
+     - node_source: https://deb.nodesource.com/setup_14.x
+     - node_libraries
+         -  forever
+         -  apidoc 
+
+   tasks:
+     - name: installing nodesource
+       ansible.builtin.uri:
+         url: "{{ node_source }}"
+     - name: installing nodejs
+       apt:
+         name: nodejs
+     - name: installing build-essential
+       apt:
+         name: build-essential
+     - name: installing nodejs libraries
+       community.general.npm:
+         name: "{{ item }}"
+       with_items:     
+     
+
