@@ -39,6 +39,7 @@
      - name: Enable the Apache2 modules
        apache2_module:
          name: apache2 modules
+         state: present
          identifier: "{{ apache2_modules }}"
      - name: restarting apache2
        ansible.builtin.systemd:
