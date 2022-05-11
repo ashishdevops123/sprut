@@ -20,7 +20,6 @@
          name: 
            - build-essential
            - npm
-     - name: installing npm
      - name: installing nodejs libraries
        community.general.npm:
          name: "{{ item }}"
