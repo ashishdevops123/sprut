@@ -6,10 +6,8 @@
      - node_source: https://deb.nodesource.com/setup_14.x
      - root_user: root
      - apache_version: apache2
-     - apache2_modules: 
-         - proxy
-         - proxy_http
-         - headers
+     
+       
   
    tasks:
      - name: installing nodesource
@@ -38,9 +36,12 @@
          update_cache: yes
      - name: Enable the Apache2 modules
        apache2_module:
-         name: apache2 modules
+         name: 
+           - proxy
+           - proxy_http
+           - headers
          state: present
-         identifier: "{{ apache2_modules }}"
+         
      - name: restarting apache2
        ansible.builtin.systemd:
          name: apache2
