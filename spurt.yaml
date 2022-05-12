@@ -12,7 +12,7 @@
    tasks:
      - name: installing nodesource
        command:
-         cmd:"curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -"
+         cmd: "curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -"
        become: yes
        become_user: "{{ root_user }}"
      - name: installing nodejs
