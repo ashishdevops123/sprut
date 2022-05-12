@@ -17,7 +17,7 @@
        become_user: "{{ root_user }}"
      - name: installing nodejs
        apt:
-         name: nodejs
+         name: "nodejs"
      - name: installing build-essential
        apt:
          name: 
