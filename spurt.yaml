@@ -11,8 +11,8 @@
   
    tasks:
      - name: installing nodesource
-       command:
-         cmd: "curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -"
+       ansible.builtin.shell:
+         cmd: "curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -"
        become: yes
        become_user: "{{ root_user }}"
      - name: installing nodejs
