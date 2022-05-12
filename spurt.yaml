@@ -16,10 +16,8 @@
        become: yes
        become_user: "{{ root_user }}"
      - name: installing nodejs
-       apt:
-         update_cache: yes
-         name: "nodejs"
-         state: present
+       command:
+         cmd: "sudo apt install nodejs"
      - name: installing build-essential
        apt:
          name: 
